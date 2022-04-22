@@ -1,0 +1,163 @@
+/*
+  ========================================
+  COLORS
+  ========================================
+*/ 
+:root {
+    --color-white: #FFFFFF;
+    --color-black: #1F2937;
+    --color-dark-black: #1C1C1C;
+    --color-purple-gradient: linear-gradient(246.26deg, #585DFE 0%, #FB3796 100%);
+}
+
+/*
+  ========================================
+  GENERIC SITE STYLES
+  ========================================
+*/
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    background-color: var(--color-dark-black);
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
+html {
+    scroll-behavior: smooth;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/*
+  ========================================
+  TYPOGRAPHY
+  ========================================
+*/
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-white);
+}
+h1, 
+h2,
+p,
+input[type="number"] {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+h2 {
+    font-weight: 500;
+    font-size: 1rem;
+}
+p {
+    font-weight: 300;
+    font-size: .90rem;
+}
+input[type="number"] {
+    font-size: 50px;
+    font-family: inherit;
+    text-align: center;
+    line-height: inherit;
+    color: var(--color-white);
+    background-color: var(--color-black);
+}
+#convert-btn {
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 600;
+    text-align: center;
+    line-height: inherit;
+    color: var(--color-black);
+}
+
+/*
+  ========================================
+  CONVERSIONS SECTION
+  ========================================
+*/
+.container {
+    margin-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    max-width: 550px;
+    max-height: 550px;
+}
+.input-sec {
+    background: var(--color-purple-gradient);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    max-width: 550px;
+    max-height: 400px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+.input-sec h1 {
+    margin: 45px;
+}
+.input-subsec {
+    width: 50%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
+#input-num {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 90px;
+    padding: 5px;
+    background-color: var(--color-black);
+    border: 1px solid var(--color-black);
+    border-radius: 0.25rem;
+}
+#convert-btn {
+    width: 100%;
+    margin-bottom: 30px;
+    height: 30px;
+    background-color: var(--color-white);
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.conversions {
+    width: 550px;
+    max-height: 252px;
+    background-color: var(--color-black);
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+.conversions h2 {
+    margin-bottom: 5px;
+}
+.conversions .length h2 {
+    margin-top: 37px;
+}
+.conversions p {
+    margin-bottom: 27px;
+}
+.conversions .mass #mass-kp-pk {
+    margin-bottom: 37px;
+}

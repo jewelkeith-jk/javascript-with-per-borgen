@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Inter Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <title>Metric Unit Conversion Tool</title>
+</head>
+<body>
+    <div class="container">
+    <!-- INPUT -->
+        <section class="input-sec">
+            <h1>Metric Unit Conversion Tool</h1>
+            <div class="input-subsec">
+                <input type="number" id="input-num"></input>
+                <button id="convert-btn" onclick="conversion()">CONVERT</button>
+            </div>
+        </section>
+    <!-- CONVERSIONS -->
+        <section class="conversions">
+        <!-- LENGTH -->
+            <section class="length">
+                <h2>Length (Meter/Feet)</h2>
+                <p id="length-mf-fm">0 meters = 0.000 feet | 0 feet = 0.000 meters</p>
+            </section>
+        <!-- VOLUME -->
+            <section class="volume">
+                <h2>Volume (Liters/Gallons)                
+                <p id="volume-lg-gl">0 liters = 0.000 gallons | 0 gallons = 0.000 liters</p>
+            </section>
+        <!-- MASS -->
+            <section class="mass">
+                <h2>Mass (Kilograms/Pounds)</h2>
+                <p id="mass-kp-pk">0 kilos = 0.000 pounds | 0 pounds = 0.000 kilos</p>
+            </section>
+        </section>
+    </div>
+<!-- JS LINK -->
+    <script src="index.js"></script>
+</body>
+</html>
