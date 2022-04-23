@@ -88,6 +88,11 @@ input[type="number"] {
     line-height: inherit;
     color: var(--color-black);
 }
+a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
 
 /*
   ========================================
@@ -96,12 +101,14 @@ input[type="number"] {
 */
 .container {
     margin-top: 20px;
+    min-width: 300px;
+    max-width: 550px;
+    max-height: 550px;
+
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
-    max-width: 550px;
-    max-height: 550px;
 }
 .input-sec {
     background: var(--color-purple-gradient);
@@ -125,7 +132,7 @@ input[type="number"] {
     align-content: center;
 }
 #input-num {
-    width: 100%;
+    min-width: 30px;
     margin-bottom: 10px;
     height: 90px;
     padding: 5px;
@@ -148,6 +155,8 @@ input[type="number"] {
     background-color: var(--color-black);
     border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
+
+    
 }
 .conversions h2 {
     margin-bottom: 5px;
@@ -160,4 +169,78 @@ input[type="number"] {
 }
 .conversions .mass #mass-kp-pk {
     margin-bottom: 37px;
+}
+
+@media only screen and (max-width: 560px) and (min-width: 300px) {
+    .input-sec h1 {
+        width: 45%;
+        margin: 30px;
+    }
+    .conversions .length,
+    .conversions .volume,
+    .conversions .mass {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content: center;
+    }
+    .conversions p {
+        flex-basis: 90%;
+    }
+    .conversions h2 {
+        flex-basis: 100%;
+    }
+
+
+    .conversions {
+        max-height: 345px;
+    }
+    .container {
+        max-height: 610px;
+        margin-top: 0;
+    }
+    body {
+        background: var(--color-purple-gradient);
+    }
+}
+
+/*
+  ========================================
+  FOOTER
+  ========================================
+*/
+.footer {
+    flex-basis: 100%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.footer,
+.socials {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.socials-list {
+    flex-basis: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+.socials-list a {
+    font-size: 2rem;
+}
+.socials-list a i:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.footer p {
+    margin-top: 10px;
+    flex-basis: 100%;
 }
