@@ -55,7 +55,7 @@ a {
     padding: 0;
 }
 h1 {
-    font-weight: 600;
+    font-weight: 800;
     font-size: 1.75rem;
 }
 h2 {
@@ -107,6 +107,7 @@ a {
 
     font-size: 1.75rem;
     font-family: inherit;
+    font-weight: 800;
     text-align: center;
     line-height: inherit;
 
