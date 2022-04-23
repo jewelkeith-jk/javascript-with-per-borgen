@@ -11,28 +11,34 @@
 
     <script src="https://kit.fontawesome.com/7862d50d51.js" crossorigin="anonymous"></script>
 
-    <link rel="icon" type="image/x-icon" href="images/rocket-solid-yellow.svg">
+    <link rel="icon" type="image/x-icon" href="images/calendar.png">
 
-    <link rel="stylesheet" href="stylesheets/index.css">
-    <title>JavaScript with Per Harald Borgen</title>
+    <link rel="stylesheet" href="stylesheets/counter.css">
+    <title>100 Days of Improvement</title>
 </head>
 <body>
-    <header class="intro">
-        <h1>My "Learn JavaScript for free" Projects</h1>
-        <h2>with Per Harald Borgen</h2>
-    </header>
-    <section class="projects">
-        <section class="counter-sec">
-            <a href="counter.html" target="_blank">Counter</a>
-        </section>
-        <section class="calculator-sec">
-            <a href="" target="_blank">Calculator</a>
-        </section>
-        <section class="metric-conversion-sec">
-            <a href="conversion.html" target="_blank">Metric Conversion</a>
-        </section>
+<!-- SKILL -->
+    <section class="skill-sec">
+        <p>What skill do you want to work on for 100 days?</p>
+        <h1>💯 Days of</h1>
+        <input type="text" id="skill-name" name="skill-name" placeholder=""/>
     </section>
-
+<!-- COUNTER -->
+    <section class="counter-sec">
+        <div class="plusminus">
+            <button id="minus-btn" onclick="minus()">
+                <i class="fas fa-angle-down"></i>
+            </button>
+            <p class="number" id="count-num">0</p>
+            <button id="plus-btn" onclick="plus()">
+                <i class="fas fa-angle-up"></i>
+            </button>
+        </div>
+        <buttton id="restart-btn" onclick="restart()">
+            <i class="fas fa-redo"></i>
+        </buttton>
+    </section>
+<!-- FOOTER -->
     <footer class="footer">
         <div class="socials">
             <ul class="socials-list">
@@ -60,5 +66,7 @@
         </div>
         <p>Made with &#128151; by Jewel</p>
     </footer>
+<!-- JS LINK -->
+    <script src="javascript/counter.js"></script>
 </body>
 </html>

@@ -1,0 +1,211 @@
+/*
+  ========================================
+  COLORS
+  ========================================
+*/ 
+:root {
+    --color-white: #FFFFFF;
+    --color-black: #1F2937;
+    --color-dark-black: #1C1C1C;
+    --color-purple-gradient: linear-gradient(246.26deg, #585DFE 0%, #FB3796 100%);
+}
+
+/*
+  ========================================
+  GENERIC SITE STYLES
+  ========================================
+*/
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    background-color: var(--color-dark-black);
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/*
+  ========================================
+  TYPOGRAPHY
+  ========================================
+*/
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-white);
+}
+h1, 
+h2,
+h3,
+p,
+a {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+h2 {
+    font-weight: 500;
+    font-size: 1.50rem;
+}
+h3 {
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+p {
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+/*
+  ========================================
+  SKILL SECTION
+  ========================================
+*/
+.skill-sec {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
+.skill-sec p,
+.skill-sec h1 {
+    flex-basis: 100%;
+    margin-top: 30px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.skill-sec h1 {
+    margin-bottom: 7px;
+}
+.skill-sec #skill-name {
+    width: 260px;
+    margin-bottom: 10px;
+    padding: 7px;
+
+    font-size: 1.75rem;
+    font-family: inherit;
+    text-align: center;
+    line-height: inherit;
+
+    color: var(--color-white);
+    background-color: var(--color-black);
+    border: 1px solid var(--color-black);
+    border-radius: 0.25rem;
+}
+
+/*
+  ========================================
+  COUNTER SECTION
+  ========================================
+*/
+.counter-sec {
+    flex-basis: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
+.counter-sec #minus-btn,
+.counter-sec #plus-btn {
+    font-size: 1.75rem;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
+    border-radius: 4px;
+}
+.counter-sec #restart-btn {
+    width: 30px;
+    font-size: 1.25rem;
+    color: var(--color-white);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
+.plusminus {
+    flex-basis: 100%;
+    margin-bottom: 17px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
+.plusminus .number {
+    margin: 0 20px 0 20px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+button:hover,
+#restart-btn:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+/*
+  ========================================
+  FOOTER
+  ========================================
+*/
+.footer {
+    flex-basis: 100%;
+    margin-top: 70px;
+}
+.footer,
+.socials {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.socials-list {
+    flex-basis: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+.socials-list a {
+    font-size: 2rem;
+}
+.socials-list a i:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.footer p {
+    margin-top: 10px;
+    flex-basis: 100%;
+}
