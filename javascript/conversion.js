@@ -5,7 +5,7 @@ inputNum.addEventListener("keyup", function(event){
         document.getElementById("convert-btn").click();
     }
 })
-
+ 
 let convertBtn = document.getElementById("convert-btn")
 convertBtn.addEventListener("click", conversion)
 

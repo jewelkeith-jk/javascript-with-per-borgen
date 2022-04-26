@@ -4,48 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Inter Google Font -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;800&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/7862d50d51.js" crossorigin="anonymous"></script>
 
-    <link rel="icon" type="image/x-icon" href="images/exchange.png">
+    <link rel="icon" type="image/x-icon" href="images/calculator.png">
 
-    <link rel="stylesheet" href="stylesheets/conversion.css">
-    <title>Metric Unit Conversion Tool</title>
+    <link rel="stylesheet" href="stylesheets/calculator.css">
+    <title>Not So Great Calculator</title>
 </head>
 <body>
-    <div class="container"> 
-    <!-- INPUT -->
-        <section class="input-sec">
-            <h1>Metric Unit Conversion Tool</h1>
-            <div class="input-subsec">
-                <input type="number" id="input-num"></input>
-                <button id="convert-btn" onclick="conversion()">CONVERT</button>
-            </div>
-        </section>
-    <!-- CONVERSIONS -->
-        <section class="conversions">
-        <!-- LENGTH -->
-            <section class="length">
-                <h2>Length (Meter/Feet)</h2>
-                <p id="length-mf-fm">0 meters = 0.000 feet | 0 feet = 0.000 meters</p>
-            </section>
-        <!-- VOLUME -->
-            <section class="volume">
-                <h2>Volume (Liters/Gallons)</h2>                
-                <p id="volume-lg-gl">0 liters = 0.000 gallons | 0 gallons = 0.000 liters</p>
-            </section>
-        <!-- MASS -->
-            <section class="mass">
-                <h2>Mass (Kilograms/Pounds)</h2>
-                <p id="mass-kp-pk">0 kilos = 0.000 pounds | 0 pounds = 0.000 kilos</p>
-            </section>
-        </section>
+<!-- INTRO -->
+    <div class="intro">   
+        <h1>Not So Great Calculator</h1>
     </div>
-
+<!-- INPUT -->
+    <section class="input-num-sec">
+        <div class="input-num-div">
+            <input type="number" id="input-num1">
+            <input type="number" id="input-num2">
+        </div>
+    </section>
+<!-- BASIC ARITHMETIC OPERATIONS -->
+    <section class="arithmetic-sec">  
+        <button id="add-btn" onclick="addition()">
+            <i class="fas fa-plus"></i>
+        </button>
+        <button id="minus-btn" onclick="subtraction()">
+            <i class="fas fa-minus"></i>
+        </button>
+        <button id="times-btn" onclick="multiplication()">
+            <i class="fas fa-times"></i>
+        </button>
+        <button id="divide-btn" onclick="division()">
+            <i class="fas fa-divide"></i>
+        </button>
+    </section>
+<!-- RESULT -->
+    <section class="result-sec">
+        <p class="result" id="result">Result: 0</p>
+    </section>
 <!-- FOOTER -->
     <footer class="footer">
         <div class="socials">
@@ -74,8 +75,7 @@
         </div>
         <p>Made with &#128151; by Jewel</p>
     </footer>
-
-<!-- JS LINK -->
+<!-- JAVASCRIPT -->
     <script src="javascript/calculator.js"></script>
 </body>
 </html>
