@@ -187,6 +187,7 @@ a {
 @media only screen and (max-width: 560px) and (min-width: 300px) {
     .container {
         margin-top: 0;
+        margin-bottom: 15px;
         min-width: 0;
     }
     body {
@@ -194,6 +195,17 @@ a {
     }
     .input-sec {
         width: 100%;
+    }
+    .input-subsec {
+        width: 70%;
+    }
+    .conversions {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-height: 290px;
+    }
+    .footer {
+        margin-top: 0;
     }
 }
 
