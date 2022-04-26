@@ -27,6 +27,7 @@ body {
     padding: 0;
     text-align: center;
     overflow-x: hidden;
+
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -53,7 +54,7 @@ body {
     font-family: 'Inter', sans-serif;
     color: var(--color-white);
 }
-h1, 
+h1,  
 h2,
 p,
 input[type="number"] {
@@ -100,6 +101,8 @@ a {
   ========================================
 */
 .container {
+    flex-basis: 100%;
+
     margin-top: 20px;
     min-width: 300px;
     max-width: 550px;
@@ -111,13 +114,17 @@ a {
     align-content: center;
 }
 .input-sec {
+    flex-basis: 100%;
+
     background: var(--color-purple-gradient);
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
+
     max-width: 550px;
-    max-height: 400px;
+    max-height: 550px;
+
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
 }
@@ -150,13 +157,19 @@ a {
 }
 
 .conversions {
-    width: 550px;
+    flex-basis: 100%;
+
+    max-width: 550px;
     max-height: 252px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    
     background-color: var(--color-black);
     border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
-
-    
 }
 .conversions h2 {
     margin-bottom: 5px;
@@ -172,35 +185,15 @@ a {
 }
 
 @media only screen and (max-width: 560px) and (min-width: 300px) {
-    .input-sec h1 {
-        width: 45%;
-        margin: 30px;
-    }
-    .conversions .length,
-    .conversions .volume,
-    .conversions .mass {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-content: center;
-    }
-    .conversions p {
-        flex-basis: 90%;
-    }
-    .conversions h2 {
-        flex-basis: 100%;
-    }
-
-
-    .conversions {
-        max-height: 345px;
-    }
     .container {
-        max-height: 610px;
         margin-top: 0;
+        min-width: 0;
     }
     body {
-        background: var(--color-purple-gradient);
+        background: var(--color-dark-black);
+    }
+    .input-sec {
+        width: 100%;
     }
 }
 
