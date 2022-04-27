@@ -124,6 +124,8 @@ a {
 */
 .counter-sec {
     flex-basis: 100%;
+    margin-bottom: 35px;
+
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -131,14 +133,25 @@ a {
 }
 .counter-sec #minus-btn,
 .counter-sec #plus-btn {
-    font-size: 1.75rem;
+    font-size: 2rem;
     background-color: var(--color-white);
     border: 1px solid var(--color-black);
     border-radius: 4px;
 }
-.counter-sec #restart-btn {
+.restart-save-btn-sec {
+    flex-basis: 100%;
+    margin-top: 10px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+}
+.counter-sec #restart-btn,
+.counter-sec #save-btn {
     width: 30px;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: var(--color-white);
     display: flex;
     flex-flow: row wrap;
@@ -147,7 +160,7 @@ a {
 }
 .plusminus {
     flex-basis: 100%;
-    margin-bottom: 17px;
+    margin-bottom: 5px;
 
     display: flex;
     flex-flow: row wrap;
@@ -166,9 +179,90 @@ a {
     font-weight: 600;
 }
 button:hover,
-#restart-btn:hover {
+#restart-btn:hover,
+#save-btn:hover {
     transform: scale(1.1);
     transition: 0.5s;
+}
+
+/*
+  ========================================
+  RECORD SECTION
+  ========================================
+*/
+.records-sec,
+.records-sub-sec,
+.nth-div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
+.records-sec,
+.records-sec h2,
+.records-sub-sec,
+.nth-div {
+    flex-basis: 100%;
+}
+.records-sec h2 {
+    margin-bottom: 10px;
+}
+.nth-div {
+    margin-bottom: 20px;
+}
+.nth-div button {
+    width: 35px;
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+.nth-div p {
+    text-align: left;
+    padding-left: 15px;
+    align-self: center;
+}
+.nth-div .text-container {
+    flex-basis: 100%;
+    margin-top: 10px;
+}
+.nth-div .tasks-completed {
+    width: 250px;
+    padding: 10px;
+
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 300;
+    text-align: left;
+    line-height: inherit;
+
+    color: var(--color-white);
+    background-color: var(--color-black);
+    border: 1px solid var(--color-black);
+    border-radius: 0.25rem;
+}
+
+@media (min-width: 600px) {
+    .nth-div {
+        flex-basis: 50%;
+    }
+}
+@media (min-width: 940px){
+    .nth-div {
+        flex-basis: 30%;
+    }
+}
+@media (min-width: 1200px){
+    .nth-div {
+        flex-basis: 25%;
+    }
+}
+@media (min-width: 1400px){
+    .nth-div {
+        flex-basis: 20%;
+    }
+    .records-sub-sec {
+        max-width: 1400px;
+    }
 }
 
 /*
@@ -179,6 +273,7 @@ button:hover,
 .footer {
     flex-basis: 100%;
     margin-top: 70px;
+    margin-bottom: 30px;
 }
 .footer,
 .socials {
