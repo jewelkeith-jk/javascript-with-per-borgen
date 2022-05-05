@@ -106,7 +106,7 @@ a {
     margin-top: 20px;
     min-width: 300px;
     max-width: 550px;
-    max-height: 550px;
+    /* max-height: 550px; */
 
     display: flex;
     flex-flow: row wrap;
@@ -215,9 +215,8 @@ a {
   ========================================
 */
 .footer {
-    flex-basis: 100%;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 .footer,
 .socials {
@@ -241,11 +240,15 @@ a {
 .socials-list a {
     font-size: 2rem;
 }
-.socials-list a i:hover {
+.socials-list a i:hover,
+.socials-list a img:hover {
     transform: scale(1.1);
     transition: 0.5s;
 }
 .footer p {
     margin-top: 10px;
     flex-basis: 100%;
+}
+.footer img {
+    width: 27px;
 }

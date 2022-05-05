@@ -8,6 +8,7 @@
     --color-black: #1F2937;
     --color-dark-black: #1C1C1C;
     --color-purple-gradient: linear-gradient(246.26deg, #585DFE 0%, #FB3796 100%);
+    --color-light-yellow: #fff9db;
 }
 
 /*
@@ -17,7 +18,7 @@
 */
 html {
     box-sizing: border-box;
-}
+} 
 *, *::before, *::after {
     box-sizing: inherit;
 }
@@ -25,16 +26,28 @@ body {
     background-color: var(--color-dark-black);
     margin: 0 auto;
     padding: 0;
+    max-width: 520px;
+
     text-align: center;
+
     overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+.body-container {
+    margin-left: 25px;
+    margin-right: 25px;
 
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-content: center;
-}
-html {
-    scroll-behavior: smooth;
+    align-content: center;   
 }
 
 /*
@@ -75,99 +88,87 @@ a {
     text-decoration: none;
     color: var(--color-white);
 }
+.stake-info, 
+#message-el,
+#prize-money,
+.intro-bet,
+.required-bet-msg {
+    color: var(--color-light-yellow);
+}
+
 
 /*
   ========================================
-  SKILL SECTION
+  HEADER SECTION
   ========================================
 */
-.skill-sec {
+header {
+    flex-basis: 100%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+/*
+  ========================================
+  PLAYER SECTION
+  ========================================
+*/
+.player-sec {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+}
+#player-info {
     flex-basis: 100%;
     margin-bottom: 10px;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    gap: 5px;
+}
+#player-name-input {
+    width: 110px;
+}
+#save-btn {
+    margin-left: 10px;
+}
+
+/*
+  ========================================
+  BET SECTION
+  ========================================
+*/
+.bet-sec {
+    flex-basis: 100%;
+    margin-bottom: 25px;
 
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
 }
-.skill-sec p,
-.skill-sec h1 {
-    flex-basis: 100%;
-    margin-top: 30px;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-.skill-sec h1 {
-    margin-bottom: 7px;
-}
-.skill-sec #skill-name {
-    width: 260px;
-    margin-bottom: 10px;
-    padding: 7px;
-
-    font-size: 1.75rem;
-    font-family: inherit;
-    font-weight: 800;
-    text-align: center;
-    line-height: inherit;
-
-    color: var(--color-white);
-    background-color: var(--color-black);
-    border: 1px solid var(--color-black);
-    border-radius: 0.25rem;
-}
-
-/*
-  ========================================
-  COUNTER SECTION
-  ========================================
-*/
-.counter-sec {
-    flex-basis: 100%;
-    margin-bottom: 35px;
-
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: center;
-}
-.counter-sec #minus-btn,
-.counter-sec #plus-btn {
+.bet-sec #minus-btn,
+.bet-sec #plus-btn {
     font-size: 2rem;
     background-color: var(--color-white);
     border: 1px solid var(--color-black);
     border-radius: 4px;
 }
-.restart-save-btn-sec {
-    flex-basis: 100%;
-    margin-top: 10px;
-
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: center;
-    gap: 20px;
-}
-.counter-sec #restart-btn,
-.counter-sec #save-btn {
-    width: 30px;
-    font-size: 1.5rem;
-    color: var(--color-white);
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: center;
-}
 .plusminus {
     flex-basis: 100%;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
 
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
 }
-.plusminus .number {
+.plusminus .bet-money {
     margin: 0 20px 0 20px;
 
     display: flex;
@@ -178,91 +179,88 @@ a {
     font-size: 1.75rem;
     font-weight: 600;
 }
-button:hover,
-#restart-btn:hover,
-#save-btn:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
+#prize-money {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+}
+.required-bet-msg {
+    margin-top: 15px;
 }
 
 /*
   ========================================
-  RECORD SECTION
+  GAME SECTION
   ========================================
 */
-.records-sec,
-.records-sub-sec,
-.nth-div {
+#cards-container {
+    margin-top: -30px;
+
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
+    gap: 10px;
 }
-.records-sec,
-.records-sec h2,
-.records-sub-sec,
-.nth-div {
-    flex-basis: 100%;
+#cards-container img {
+    max-width: 75px;
+    position: relative;
 }
-.records-sec h2 {
+.slide-bottom {
+	-webkit-animation: slide-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(30px);
+                transform: translateY(30px);
+    }
+}
+@keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+                top: 0px;
+    }
+    100% {
+        -webkit-transform: translateY(30px);
+                transform: translateY(30px);
+    }
+}
+#message-el {
+    margin-bottom: 15px;
+}
+.cards-heading {
     margin-bottom: 10px;
 }
-.nth-div {
+#cards-el {
+    margin-bottom: 15px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 20px
+}
+.sum-heading {
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+#redo-btn {
     margin-bottom: 20px;
 }
-.nth-div button {
-    width: 35px;
-
-    font-size: 1rem;
-    font-weight: 600;
+#stake-container {
+    margin-bottom: 10px;
 }
-.nth-div p {
-    text-align: left;
-    padding-left: 15px;
-    align-self: center;
-}
-.nth-div .text-container {
-    flex-basis: 100%;
-    margin-top: 10px;
-}
-.nth-div .tasks-completed {
-    width: 250px;
-    padding: 10px;
-
-    font-size: 1rem;
-    font-family: inherit;
-    font-weight: 300;
-    text-align: left;
-    line-height: inherit;
-
-    color: var(--color-white);
-    background-color: var(--color-black);
-    border: 1px solid var(--color-black);
-    border-radius: 0.25rem;
-}
-
-@media (min-width: 600px) {
-    .nth-div {
-        flex-basis: 50%;
-    }
-}
-@media (min-width: 940px){
-    .nth-div {
-        flex-basis: 30%;
-    }
-}
-@media (min-width: 1200px){
-    .nth-div {
-        flex-basis: 25%;
-    }
-}
-@media (min-width: 1400px){
-    .nth-div {
-        flex-basis: 20%;
-    }
-    .records-sub-sec {
-        max-width: 1400px;
-    }
+#balance-label,
+#balance-number {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    gap: 20px
 }
 
 /*
@@ -308,3 +306,16 @@ button:hover,
 .footer img {
     width: 27px;
 }
+
+/* ----------------------------------------------
+ * Generated by Animista on 2022-5-5 14:47:23
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-bottom
+ * ----------------------------------------
+ */

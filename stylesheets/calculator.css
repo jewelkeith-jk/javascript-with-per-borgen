@@ -195,8 +195,8 @@ a {
   ========================================
 */
 .footer {
-    flex-basis: 100%;
-    margin-top: 70px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 .footer,
 .socials {
@@ -220,11 +220,15 @@ a {
 .socials-list a {
     font-size: 2rem;
 }
-.socials-list a i:hover {
+.socials-list a i:hover,
+.socials-list a img:hover {
     transform: scale(1.1);
     transition: 0.5s;
 }
 .footer p {
     margin-top: 10px;
     flex-basis: 100%;
+}
+.footer img {
+    width: 27px;
 }
