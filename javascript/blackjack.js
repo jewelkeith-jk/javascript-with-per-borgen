@@ -56,7 +56,8 @@ minusBtn.disabled = false
 
 let requireBetMsg = document.createElement('p')
 requireBetMsg.classList.add('required-bet-msg')
-plusMinusSection.appendChild(requireBetMsg)
+let requireContainer = document.getElementById('require-bet-msg-container')
+requireContainer.appendChild(requireBetMsg)
 
 let count = 0
 let doubleBetPrize = 0

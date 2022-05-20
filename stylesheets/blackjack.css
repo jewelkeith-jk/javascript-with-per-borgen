@@ -184,7 +184,10 @@ header {
     margin-bottom: 20px;
 }
 .required-bet-msg {
-    margin-top: 15px;
+    margin-bottom: 20px;
+}
+#require-bet-msg-container {
+    flex-basis: 100%;
 }
 
 /*
