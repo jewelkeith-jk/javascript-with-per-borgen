@@ -81,7 +81,7 @@ h1 {
     font-size: 1.70rem;
 }
 h2 {
-    font-weight: 500;
+    font-weight: 800;
     font-size: 1.50rem;
 }
 h3 {
@@ -118,20 +118,10 @@ header,
   BUTTONS
   ========================================
 */
-#claim-btn {
-    width: 78px;
-}
-.ketchup-factory-container button,
+#sweet-btn,
+#spicy-btn,
+#sweet-spicy-btn,
 .claim-btn {
-    width: 100%;
-    height: 48px;
-    /* padding: 8px;
-
-    background: var(--color-light-red);
-    border: 0px solid var(--color-black);
-    border-radius: 10px;
-    font-size: 0.72rem; */
-
     color: var(--color-white);
     padding: 5px 10px;
     font-weight: bold;
@@ -145,12 +135,20 @@ header,
     background: var(--color-btn-bg);
     box-shadow: 0 5px var(--color-btn-shadow);
 }
-.ketchup-factory-container button:hover,
+#claim-btn {
+    width: 130px;
+    height: 48px;
+}
+#sweet-btn:hover,
+#spicy-btn:hover,
+#sweet-spicy-btn:hover,
 #claim-btn:hover {
     box-shadow: 0 3px var(--color-btn-shadow);
     top: 1px;
 }
-.ketchup-factory-container button:active,
+#sweet-btn:active,
+#spicy-btn:active,
+#sweet-spicy-btn:active,
 #claim-btn:active {
     box-shadow: 0 0 var(--color-btn-shadow);
     top: 5px;
@@ -249,13 +247,11 @@ header h1 {
     background: var(--color-light-red);
     border-radius: 10px;
     min-height: 50px;
-    /* width: 260px; */
     margin: 10px auto;
     padding: 8px;
 }
-#tomato-sec h3 {
+#tomato-sec h2 {
     text-align: left;
-    /* width: 260px; */
     margin: 0px auto;
 }
 #tomato-storage-list {
@@ -263,13 +259,13 @@ header h1 {
     padding: 0;
     height: 65px;
 
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 #tomato-storage-list li {
     display: inline-block;
 }
 ::-webkit-scrollbar {
-    width: 7px;
+    width: 5px;
 }
 ::-webkit-scrollbar-track {
     background: #f1f1f1; 
@@ -289,12 +285,12 @@ background: #555;
 .ketchup-factory {
     margin-bottom: 30px;
 }
-.ketchup-factory h3 {
+.ketchup-factory h2 {
     text-align: left;
     margin-bottom: 10px;
 }
 #possible-ketchups {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .ketchup-factory-container {
     width: 260px;
@@ -303,13 +299,49 @@ background: #555;
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
-    gap: 12px;
 }
 .sweet-input-sec,
 .spicy-input-sec,
 .sweet-spicy-input-sec {
-    flex-basis: 30%;
+    flex-basis: 260px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
 }
+.plus-minus-ketchup-container {
+    width: 130px;
+}
+#sweet-input,
+#spicy-input,
+#sweet-spicy-input {
+    width: 103px;
+    background-color: var(--color-black);
+    border-radius: 2px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+#minus-sweet-ketchup-btn,
+#plus-sweet-ketchup-btn,
+#minus-spicy-ketchup-btn,
+#plus-spicy-ketchup-btn,
+#minus-sweet-spicy-ketchup-btn,
+#plus-sweet-spicy-ketchup-btn {
+    width: 50px;
+    font-size: 1rem;
+}
+#sweet-btn,
+#spicy-btn,
+#sweet-spicy-btn {
+    width: 130px;
+    height: 48px;
+}
+
 .ketchup-factory-container input {
     width: 100%;
     margin-bottom: 10px;
@@ -321,18 +353,13 @@ background: #555;
     color: var(--color-white);
     background-color: var(--color-black);
 }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 
 /*
   ========================================
   KETCHUP STORAGE
   ========================================
 */
-.ketchup-storage-sec h3 {
+.ketchup-storage-sec h2 {
     text-align: left;
     margin-bottom: 10px;
 }
@@ -353,8 +380,9 @@ input::-webkit-inner-spin-button {
 #sweet-storage,
 #spicy-storage,
 #sweet-spicy-storage {
-    height: 65px;
+    height: 82px;
     padding: 8px;
+    margin-bottom: 5px;
 
     background: var(--color-light-red);
     border-radius: 10px;
@@ -368,9 +396,23 @@ input::-webkit-inner-spin-button {
 #sweet-spicy-storage {
     background: var(--color-light-pink-3);
 } */
-.ketchup-storage p {
+.ketchup-storage h3 {
     margin-bottom: 10px;
-    font-size: 0.72rem;
+    font-size: 0.71rem;
+}
+#sweet-storage-list,
+#spicy-storage-list,
+#sweet-spicy-storage-list {
+    margin: 0;
+    padding: 0;
+    height: 65px;
+
+    overflow-y: auto;
+}
+#sweet-storage-list li,
+#spicy-storage-list li,
+#sweet-spicy-storage-list li {
+    display: inline-block;
 }
 
 /*

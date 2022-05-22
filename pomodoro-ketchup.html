@@ -53,7 +53,7 @@
         </section>
     <!-- TOMATO STORAGE -->
         <section id="tomato-sec">
-            <h3>Tomato Storage</h3>
+            <h2>Tomato Storage</h2>
             <div id="tomato-storage">
                 <ul id="tomato-storage-list"></ul>
             </div>
@@ -61,46 +61,71 @@
         </section>
     <!-- KETCHUP FACTORY -->
         <section class="ketchup-factory">
-            <h3>Ketchup Factory</h3>
-            <p id="possible-ketchups">You can make 1 <i class="fas fa-wine-bottle"></i></p>
+            <h2>Ketchup Factory</h2>
+            <p id="possible-ketchups">You can fill up 0 <i class="fas fa-wine-bottle"></i></p>
             <div class="ketchup-factory-container">
                 <section class="sweet-input-sec">
-                    <input type="number" id="sweet-input" min="0">
-                    <button id="sweet-btn">Sweet</button>
+                    <div class="plus-minus-ketchup-container">
+                        <p id="sweet-input">0</p>
+                        <button id="minus-sweet-ketchup-btn" onclick="minusSweetKetchup()">
+                            <i class="fas fa-angle-down"></i>
+                        </button>
+                        <button id="plus-sweet-ketchup-btn" onclick="plusSweetKetchup()">
+                            <i class="fas fa-angle-up"></i>
+                        </button>
+                    </div>
+                    <button id="sweet-btn" onclick="addSweetKetchup()">Sweet</button>
                 </section>
                 <section class="spicy-input-sec">
-                    <input type="number" id="spicy-input" min="0">
-                    <div></div>
-                    <div></div>
-                    <button id="spicy-btn">Spicy</button>
+                    <div class="plus-minus-ketchup-container">
+                        <p id="spicy-input">0</p>
+                        <button id="minus-spicy-ketchup-btn" onclick="minusSpicyKetchup()">
+                            <i class="fas fa-angle-down"></i>
+                        </button>
+                        <button id="plus-spicy-ketchup-btn" onclick="plusSpicyKetchup()">
+                            <i class="fas fa-angle-up"></i>
+                        </button>
+                    </div>
+                    <button id="spicy-btn" onclick="addSpicyKetchup()">Spicy</button>
                 </section>
                 <section class="sweet-spicy-input-sec">
-                    <input type="number" id="sweet-spicy-input" min="0">
-                    <button id="sweet-spicy-btn">Sweet & Spicy</button>
+                    <div class="plus-minus-ketchup-container">
+                        <p id="sweet-spicy-input">0</p>
+                        <button id="minus-sweet-spicy-ketchup-btn" onclick="minusSweetSpicyKetchup()">
+                            <i class="fas fa-angle-down"></i>
+                        </button>
+                        <button id="plus-sweet-spicy-ketchup-btn" onclick="plusSweetSpicyKetchup()">
+                            <i class="fas fa-angle-up"></i>
+                        </button>
+                    </div>
+                    <button id="sweet-spicy-btn" onclick="addSweetSpicyKetchup()">Sweet & Spicy</button>
                 </section>
             </div>
         </section>
     <!-- KETCHUP STORAGE -->
         <section class="ketchup-storage-sec">
-            <h3>Ketchup Storage</h3>
+            <h2>Ketchup Storage</h2>
             <div class="ketchup-storage">
                 <section class="sweet-sec">
-                    <p>Sweet</p>
+                    <h3>Sweet</h3>
                     <div id="sweet-storage">
-                        <ul class="sweet-storage-list"></ul>
+                        <ul id="sweet-storage-list"></ul>
                     </div>
+                    <p id="total-sweet">0 💛</p>
                 </section>
                 <section class="spicy-sec">
-                    <p>Spicy</p>
+                    <h3>Spicy</h3>
                     <div id="spicy-storage">
-                        <ul class="spicy-storage-list"></ul>
+                        <ul id="spicy-storage-list"></ul>
                     </div>
+                    <p id="total-spicy">0 ❤️</p>
                 </section>
                 <section class="sweet-spicy-sec">
-                    <p>Sweet & Spicy</p>
+                    <h3>Sweet & Spicy</h3>
                     <div id="sweet-spicy-storage">
-                        <ul class="sweet-spicy-storage-list"></ul>
+                        <ul id="sweet-spicy-storage-list"></ul>
                     </div>
+                    <p id="total-sweet-spicy">0 🧡</p>
                 </section>
             </div>
         </section>
