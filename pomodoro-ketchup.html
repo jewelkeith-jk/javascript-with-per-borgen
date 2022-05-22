@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;800&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/7862d50d51.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" type="image/x-icon" href="images/ketchup-bottle.svg">
+
+    <link rel="stylesheet" href="stylesheets/pomodoro-ketchup.css">
+    <title>Pomodoro Ketchup</title>
+</head>
+<body>
+    <div class="body-container">
+        <header>
+            <div class="header-container">
+                <h1>Pomodoro Ketchup</h1>
+                <p>When life gives you tomato seeds, make some pomodoro ketchup 😂</p>
+            </div>
+        </header>
+    <!-- SET TIME -->
+        <section class="timer-sec">
+            <div class="plusminus">
+                <button id="minus-btn" onclick="minus()">
+                    <i class="fas fa-angle-down"></i>
+                </button>
+
+                <p class="time" id="time">25:00</p>
+                
+                <button id="plus-btn" onclick="plus()">
+                    <i class="fas fa-angle-up"></i>
+                </button>
+            </div>
+            <div class="play-pause-res-sec">   
+                <buttton id="play-btn" onclick="playTimer()">
+                    <i class="fas fa-play"></i>
+                </buttton>
+                <buttton id="pause-btn" onclick="pauseTimer()">
+                    <i class="fas fa-pause"></i>
+                </buttton>
+                <buttton id="restart-btn" onclick="restartTimer()">
+                    <i class="fas fa-redo"></i>
+                </buttton>
+            </div>
+            <section class="harvest-container">
+                <p class="harvest-msg" id="harvest-msg">1 🍅 for working 25m</p>
+                <button id="claim-btn" onclick="claimTomatoFun()">Claim</button>
+            </section>
+        </section>
+    <!-- TOMATO STORAGE -->
+        <section id="tomato-sec">
+            <h3>Tomato Storage</h3>
+            <div id="tomato-storage">
+                <ul id="tomato-storage-list"></ul>
+            </div>
+            <p id="total-storage-tomatoes"></p>
+        </section>
+    <!-- KETCHUP FACTORY -->
+        <section class="ketchup-factory">
+            <h3>Ketchup Factory</h3>
+            <p id="possible-ketchups">You can make 1 pomodoro ketchup!</p>
+            <div class="ketchup-factory-container">
+                <section class="sweet-input-sec">
+                    <input type="number" id="sweet-input">
+                    <button id="sweet-btn">Sweet</button>
+                </section>
+                <section class="spicy-input-sec">
+                    <input type="number" id="sweet-input">
+                    <button id="spicy-btn">Spicy</button>
+                </section>
+                <section class="sweet-spicy-input-sec">
+                    <input type="number" id="sweet-input">
+                    <button id="sweet-spicy-btn">Sweet & Spicy</button>
+                </section>
+            </div>
+        </section>
+    <!-- KETCHUP STORAGE -->
+        <section class="ketchup-storage-sec">
+            <h3>Ketchup Storage</h3>
+            <div class="ketchup-storage">
+                <section class="sweet-sec">
+                    <p>Sweet</p>
+                    <div id="sweet-storage">
+                        <ul class="sweet-storage-list"></ul>
+                    </div>
+                </section>
+                <section class="spicy-sec">
+                    <p>Spicy</p>
+                    <div id="spicy-storage">
+                        <ul class="spicy-storage-list"></ul>
+                    </div>
+                </section>
+                <section class="sweet-spicy-sec">
+                    <p>Sweet & Spicy</p>
+                    <div id="sweet-spicy-storage">
+                        <ul class="sweet-spicy-storage-list"></ul>
+                    </div>
+                </section>
+            </div>
+        </section>
+    <!-- FOOTER -->
+        <footer class="footer">
+            <div class="socials">
+                <ul class="socials-list">
+                    <li>
+                        <a href="https://github.com/jewelkeith-jk" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://codepen.io/jkal_eunkyung/" target="_blank">
+                            <i class="fab fa-codepen"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://jewelkeith-jk.hashnode.dev/" target="_blank">
+                            <img src="images/hashnode-icon.png" alt="hashnode white logo">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/jewelkeith_jk" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/jewel-keith-lobedica/" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Made with &#128151; by Jewel</p>
+        </footer>
+    </div>
+    <script src="javascript/pomodoro-ketchup.js"></script>
+</body>

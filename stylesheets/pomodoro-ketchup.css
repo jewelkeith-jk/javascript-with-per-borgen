@@ -9,6 +9,7 @@
     --color-dark-black: #1C1C1C;
     --color-purple-gradient: linear-gradient(246.26deg, #585DFE 0%, #FB3796 100%);
     --color-light-yellow: #fff9db;
+    --color-light-red: #ffc9c9;
 }
 
 /*
@@ -83,17 +84,9 @@ p {
     font-weight: 300;
     font-size: 1rem;
 }
-
 a {
     text-decoration: none;
     color: var(--color-white);
-}
-.stake-info, 
-#message-el,
-#prize-money,
-.intro-bet,
-.required-bet-msg {
-    color: var(--color-light-yellow);
 }
 
 /*
@@ -104,70 +97,68 @@ a {
 header {
     flex-basis: 100%;
     margin-top: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
-
-/*
-  ========================================
-  PLAYER SECTION
-  ========================================
-*/
-.player-sec {
-    flex-basis: 100%;
-    margin-bottom: 20px;
-
-    display: flex;
-    flex-flow: row wrap;
-    align-content: center;
+.header-container {
+    width: 290px;
+    margin: 0 auto;
 }
-#player-info {
-    flex-basis: 100%;
+header h1 {
     margin-bottom: 10px;
-
-    display: flex;
-    flex-flow: row wrap;
-    align-content: center;
-    gap: 5px;
-}
-#player-name-input {
-    width: 110px;
-}
-#save-btn {
-    margin-left: 10px;
 }
 
 /*
   ========================================
-  BET SECTION
+  TIMER SECTION
   ========================================
 */
-.bet-sec {
+.timer-sec {
     flex-basis: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
 
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
 }
-.bet-sec #minus-btn,
-.bet-sec #plus-btn {
+.timer-sec #minus-btn,
+.timer-sec #plus-btn {
     font-size: 2rem;
     background-color: var(--color-white);
     border: 1px solid var(--color-black);
     border-radius: 4px;
 }
+.play-pause-res-sec {
+    flex-basis: 100%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+}
+.timer-sec #play-btn,
+.timer-sec #pause-btn,
+.timer-sec #restart-btn {
+    width: 30px;
+    font-size: 1.5rem;
+    color: var(--color-white);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
 .plusminus {
     flex-basis: 100%;
-    margin-top: 10px;
-    margin-bottom: 15px;
 
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
 }
-.plusminus .bet-money {
+.plusminus .time {
     margin: 0 20px 0 20px;
 
     display: flex;
@@ -178,91 +169,145 @@ header {
     font-size: 1.75rem;
     font-weight: 600;
 }
-#prize-money {
+.harvest-container {
     flex-basis: 100%;
-    margin-bottom: 20px;
 }
-.required-bet-msg {
-    margin-bottom: 20px;
-}
-#require-bet-msg-container {
-    flex-basis: 100%;
+.harvest-container .harvest-msg {
+    margin-bottom: 10px;
 }
 
 /*
   ========================================
-  GAME SECTION
+  TOMATO STORAGE
   ========================================
 */
-#cards-container {
-    margin-top: -30px;
-
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: center;
-    gap: 10px;
-}
-#cards-container img {
-    max-width: 75px;
-    position: relative;
-}
-.slide-bottom {
-	-webkit-animation: slide-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: slide-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-@-webkit-keyframes slide-bottom {
-    0% {
-        -webkit-transform: translateY(0);
-                transform: translateY(0);
-    }
-    100% {
-        -webkit-transform: translateY(30px);
-                transform: translateY(30px);
-    }
-}
-@keyframes slide-bottom {
-    0% {
-        -webkit-transform: translateY(0);
-                transform: translateY(0);
-                top: 0px;
-    }
-    100% {
-        -webkit-transform: translateY(30px);
-                transform: translateY(30px);
-    }
-}
-#message-el {
-    margin-bottom: 15px;
-}
-.cards-heading {
-    margin-bottom: 10px;
-}
-#cards-el {
-    margin-bottom: 15px;
-
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: center;
-    gap: 20px
-}
-.sum-heading {
-    margin-top: 40px;
-    margin-bottom: 15px;
-}
-#redo-btn {
+#tomato-sec {
+    flex-basis: 100%;
     margin-bottom: 20px;
 }
-#stake-container {
+#tomato-storage {
+    background: var(--color-light-red);
+    border-radius: 10px;
+    min-height: 50px;
+    width: 260px;
+    margin: 10px auto;
+    padding: 8px;
+}
+#tomato-sec h3 {
+    text-align: left;
+    width: 260px;
+    margin: 0px auto;
+}
+#tomato-storage-list {
+    margin: 0;
+    padding: 0;
+    height: 65px;
+
+    overflow-y: scroll;
+}
+#tomato-storage-list li {
+    display: inline-block;
+}
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}
+
+/*
+  ========================================
+  KETCHUP FACTORY
+  ========================================
+*/
+.ketchup-factory {
+    width: 260px;
+    margin-bottom: 20px;
+}
+.ketchup-factory h3 {
+    text-align: left;
     margin-bottom: 10px;
 }
-#balance-label,
-#balance-number {
+#possible-ketchups {
+    margin-bottom: 10px;
+}
+.ketchup-factory-container {
+    width: 260px;
+
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
     align-content: center;
-    gap: 20px
+    gap: 12px;
+}
+.sweet-input-sec,
+.spicy-input-sec,
+.sweet-spicy-input-sec {
+    flex-basis: 30%;
+}
+.ketchup-factory-container button {
+    width: 100%;
+    height: 48px;
+    padding: 8px;
+
+    background: var(--color-light-red);
+    border: 0px solid var(--color-black);
+    border-radius: 10px;
+    font-size: 0.72rem;
+}
+.ketchup-factory-container input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+
+    border: 1px solid var(--color-black);
+    border-radius: 3px;
+}
+
+/*
+  ========================================
+  KETCHUP STORAGE
+  ========================================
+*/
+.ketchup-storage-sec {
+    width: 260px;
+}
+.ketchup-storage-sec h3 {
+    text-align: left;
+    margin-bottom: 10px;
+}
+.ketchup-storage {
+    width: 260px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 12px;
+}
+.sweet-sec,
+.spicy-sec,
+.sweet-spicy-sec {
+    flex-basis: 30%;
+}
+#sweet-storage,
+#spicy-storage,
+#sweet-spicy-storage {
+    height: 65px;
+    padding: 8px;
+
+    background: var(--color-light-red);
+    border-radius: 10px;
+}
+.ketchup-storage p {
+    margin-bottom: 10px;
+    font-size: 0.72rem;
 }
 
 /*
@@ -308,16 +353,3 @@ header {
 .footer img {
     width: 27px;
 }
-
-/* ----------------------------------------------
- * Generated by Animista on 2022-5-5 14:47:23
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-
-/**
- * ----------------------------------------
- * animation slide-bottom
- * ----------------------------------------
- */
