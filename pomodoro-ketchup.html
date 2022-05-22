@@ -19,10 +19,8 @@
 <body>
     <div class="body-container">
         <header>
-            <div class="header-container">
-                <h1>Pomodoro Ketchup</h1>
-                <p>When life gives you tomato seeds, make some pomodoro ketchup 😂</p>
-            </div>
+            <h1>Pomodoro Ketchup</h1>
+            <p>When life gives you tomato seeds, make some pomodoro ketchup 😂</p>
         </header>
     <!-- SET TIME -->
         <section class="timer-sec">
@@ -50,7 +48,7 @@
             </div>
             <section class="harvest-container">
                 <p class="harvest-msg" id="harvest-msg">1 🍅 for working 25m</p>
-                <button id="claim-btn" onclick="claimTomatoFun()">Claim</button>
+                <button class="claim-btn" id="claim-btn" onclick="claimTomatoFun()">Claim</button>
             </section>
         </section>
     <!-- TOMATO STORAGE -->
@@ -64,18 +62,20 @@
     <!-- KETCHUP FACTORY -->
         <section class="ketchup-factory">
             <h3>Ketchup Factory</h3>
-            <p id="possible-ketchups">You can make 1 pomodoro ketchup!</p>
+            <p id="possible-ketchups">You can make 1 <i class="fas fa-wine-bottle"></i></p>
             <div class="ketchup-factory-container">
                 <section class="sweet-input-sec">
-                    <input type="number" id="sweet-input">
+                    <input type="number" id="sweet-input" min="0">
                     <button id="sweet-btn">Sweet</button>
                 </section>
                 <section class="spicy-input-sec">
-                    <input type="number" id="sweet-input">
+                    <input type="number" id="spicy-input" min="0">
+                    <div></div>
+                    <div></div>
                     <button id="spicy-btn">Spicy</button>
                 </section>
                 <section class="sweet-spicy-input-sec">
-                    <input type="number" id="sweet-input">
+                    <input type="number" id="sweet-spicy-input" min="0">
                     <button id="sweet-spicy-btn">Sweet & Spicy</button>
                 </section>
             </div>

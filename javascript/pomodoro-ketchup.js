@@ -141,7 +141,7 @@ function restartTimer(){
 let tomatoStorageList = document.getElementById('tomato-storage-list')
 let totalStorageTomatoesMsg = document.getElementById('total-storage-tomatoes')
 
-let tomatoArray = []
+let tomatoArray = ['🍅', '🍅', '🍅']
 
 function claimTomatoFun(){
   for(let i = totalWorkTomato; i > 0; i--){
@@ -162,6 +162,17 @@ totalStorageTomatoesMsg.textContent = `You have ${totalStorageTomatoes} 🍅`
   KETCHUP FACTORY
   ========================================
 */
+let possibleKetchups = Math.trunc(totalStorageTomatoes / 2)
+
+let sweetInput = document.getElementById('sweet-input')
+let spicyInput = document.getElementById('spicy-input')
+let sweetSpicyInput = document.getElementById('sweet-spicy-input') 
+
+sweetInput.max = possibleKetchups
+spicyInput.max = possibleKetchups
+sweetSpicyInput.max = possibleKetchups
+
+
 
 /*
   ========================================

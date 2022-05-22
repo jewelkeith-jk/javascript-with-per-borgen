@@ -7,9 +7,17 @@
     --color-white: #FFFFFF;
     --color-black: #1F2937;
     --color-dark-black: #1C1C1C;
-    --color-purple-gradient: linear-gradient(246.26deg, #585DFE 0%, #FB3796 100%);
-    --color-light-yellow: #fff9db;
-    --color-light-red: #ffc9c9;
+    --color-light-red: #ffa8a8;
+    --color-btn-bg: #ff8787;
+    --color-btn-shadow: #e03131;
+
+    --color-red-1: #ff6b6b;
+    --color-red-2: #fa5252;
+    --color-red-3: #f03e3e;
+
+    --color-light-pink-1: #fcc2d7;
+    --color-light-pink-2: #faa2c1;
+    --color-light-pink-3: #f783ac;
 }
 
 /*
@@ -70,7 +78,7 @@ a {
 }
 h1 {
     font-weight: 800;
-    font-size: 1.75rem;
+    font-size: 1.70rem;
 }
 h2 {
     font-weight: 500;
@@ -88,6 +96,65 @@ a {
     text-decoration: none;
     color: var(--color-white);
 }
+/* #possible-ketchups i {
+    color: var(--color-red-3);
+} */
+
+/*
+  ========================================
+  SECTIONS SIZING
+  ========================================
+*/
+header,
+.timer-sec,
+#tomato-sec,
+.ketchup-factory,
+.ketchup-storage-sec {
+    width: 260px;
+}
+
+/*
+  ========================================
+  BUTTONS
+  ========================================
+*/
+#claim-btn {
+    width: 78px;
+}
+.ketchup-factory-container button,
+.claim-btn {
+    width: 100%;
+    height: 48px;
+    /* padding: 8px;
+
+    background: var(--color-light-red);
+    border: 0px solid var(--color-black);
+    border-radius: 10px;
+    font-size: 0.72rem; */
+
+    color: var(--color-white);
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: var(--color-btn-bg);
+    box-shadow: 0 5px var(--color-btn-shadow);
+}
+.ketchup-factory-container button:hover,
+#claim-btn:hover {
+    box-shadow: 0 3px var(--color-btn-shadow);
+    top: 1px;
+}
+.ketchup-factory-container button:active,
+#claim-btn:active {
+    box-shadow: 0 0 var(--color-btn-shadow);
+    top: 5px;
+}
 
 /*
   ========================================
@@ -95,13 +162,8 @@ a {
   ========================================
 */
 header {
-    flex-basis: 100%;
-    margin-top: 15px;
+    margin-top: 20px;
     margin-bottom: 30px;
-}
-.header-container {
-    width: 290px;
-    margin: 0 auto;
 }
 header h1 {
     margin-bottom: 10px;
@@ -113,7 +175,6 @@ header h1 {
   ========================================
 */
 .timer-sec {
-    flex-basis: 100%;
     margin-bottom: 35px;
 
     display: flex;
@@ -182,20 +243,19 @@ header h1 {
   ========================================
 */
 #tomato-sec {
-    flex-basis: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 #tomato-storage {
     background: var(--color-light-red);
     border-radius: 10px;
     min-height: 50px;
-    width: 260px;
+    /* width: 260px; */
     margin: 10px auto;
     padding: 8px;
 }
 #tomato-sec h3 {
     text-align: left;
-    width: 260px;
+    /* width: 260px; */
     margin: 0px auto;
 }
 #tomato-storage-list {
@@ -227,8 +287,7 @@ background: #555;
   ========================================
 */
 .ketchup-factory {
-    width: 260px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .ketchup-factory h3 {
     text-align: left;
@@ -251,16 +310,6 @@ background: #555;
 .sweet-spicy-input-sec {
     flex-basis: 30%;
 }
-.ketchup-factory-container button {
-    width: 100%;
-    height: 48px;
-    padding: 8px;
-
-    background: var(--color-light-red);
-    border: 0px solid var(--color-black);
-    border-radius: 10px;
-    font-size: 0.72rem;
-}
 .ketchup-factory-container input {
     width: 100%;
     margin-bottom: 10px;
@@ -268,6 +317,14 @@ background: #555;
 
     border: 1px solid var(--color-black);
     border-radius: 3px;
+
+    color: var(--color-white);
+    background-color: var(--color-black);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /*
@@ -275,9 +332,6 @@ background: #555;
   KETCHUP STORAGE
   ========================================
 */
-.ketchup-storage-sec {
-    width: 260px;
-}
 .ketchup-storage-sec h3 {
     text-align: left;
     margin-bottom: 10px;
@@ -305,6 +359,15 @@ background: #555;
     background: var(--color-light-red);
     border-radius: 10px;
 }
+/* #sweet-storage {
+    background: var(--color-light-pink-1);
+}
+#spicy-storage {
+    background: var(--color-light-pink-2);
+}
+#sweet-spicy-storage {
+    background: var(--color-light-pink-3);
+} */
 .ketchup-storage p {
     margin-bottom: 10px;
     font-size: 0.72rem;
