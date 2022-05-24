@@ -7,17 +7,17 @@
     --color-white: #FFFFFF;
     --color-black: #1F2937;
     --color-dark-black: #1C1C1C;
-    --color-light-red: #ffa8a8;
+    --color-light-red: rgba(255, 168, 168, 0.8);
+
     --color-btn-bg: #ff8787;
     --color-btn-shadow: #e03131;
 
-    --color-red-1: #ff6b6b;
-    --color-red-2: #fa5252;
-    --color-red-3: #f03e3e;
+    --color-pre-claim-bg: #ffa8a8;
+    --color-pre-claim-shadow: #ff6b6b;
 
-    --color-light-pink-1: #fcc2d7;
-    --color-light-pink-2: #faa2c1;
-    --color-light-pink-3: #f783ac;
+    --color-sweet-ketchup: #ff6b6b;
+    --color-spicy-ketchup: #c92a2a;
+    --color-sweet-spicy-ketchup: #f03e3e;
 }
 
 /*
@@ -83,6 +83,8 @@ h1 {
 h2 {
     font-weight: 800;
     font-size: 1.50rem;
+    border-left: 5px solid var(--color-btn-bg);
+    padding-left: 7px;
 }
 h3 {
     font-weight: 400;
@@ -96,9 +98,6 @@ a {
     text-decoration: none;
     color: var(--color-white);
 }
-/* #possible-ketchups i {
-    color: var(--color-red-3);
-} */
 
 /*
   ========================================
@@ -118,6 +117,13 @@ header,
   BUTTONS
   ========================================
 */
+button,
+#play-btn,
+#pause-btn,
+#restart-btn {
+    cursor: pointer;
+}
+
 #sweet-btn,
 #spicy-btn,
 #sweet-spicy-btn,
@@ -232,7 +238,7 @@ header h1 {
     flex-basis: 100%;
 }
 .harvest-container .harvest-msg {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 /*
@@ -244,7 +250,7 @@ header h1 {
     margin-bottom: 30px;
 }
 #tomato-storage {
-    background: var(--color-light-red);
+    background: var(--color-black);
     border-radius: 10px;
     min-height: 50px;
     margin: 10px auto;
@@ -384,7 +390,7 @@ background: #555;
     padding: 8px;
     margin-bottom: 5px;
 
-    background: var(--color-light-red);
+    background: var(--color-black);
     border-radius: 10px;
 }
 /* #sweet-storage {
@@ -413,6 +419,16 @@ background: #555;
 #spicy-storage-list li,
 #sweet-spicy-storage-list li {
     display: inline-block;
+}
+
+#total-sweet i {
+    color: var(--color-sweet-ketchup);
+}
+#total-spicy i {
+    color: var(--color-spicy-ketchup);
+}
+#total-sweet-spicy i {
+    color: var(--color-sweet-spicy-ketchup);
 }
 
 /*

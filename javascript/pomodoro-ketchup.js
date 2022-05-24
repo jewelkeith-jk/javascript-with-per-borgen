@@ -57,18 +57,20 @@ let addZero = 0
 let countdownSec
 let countdownMin
 
-pomodoroTime -= 25
+pomodoroTime -= 1
 
 pauseBtn.style.display = 'none'
-
-// claimBtn.disabled = true
-claimBtn.style.visibility = 'hidden'
+claimBtn.style.display = 'none'
+let plantingMsg = document.getElementById('planting-msg')
 
 function playTimer() {
-    plusBtn.style.display = 'none'
-    minusBtn.style.display = 'none'
+    plusBtn.style.visibility = 'hidden'
+    minusBtn.style.visibility = 'hidden'
     playBtn.style.display = 'none'
     pauseBtn.style.display = 'inline-block'
+    pauseBtn.style.visibility = 'visible'
+
+    plantingMsg.textContent = `Your tomato seeds are growing`
 
   // SECONDS
     countdownSec = setInterval(function(){
@@ -85,7 +87,6 @@ function playTimer() {
           seconds += 60
           if(pomodoroTime === 0){
             clearInterval(countdownSec)
-            claimBtn.style.visibility = 'visible'
           }
         }
       }
@@ -101,7 +102,9 @@ function playTimer() {
           seconds += 60
           if(pomodoroTime === 0){
             clearInterval(countdownSec)
-            claimBtn.style.visibility = 'visible'
+            claimBtn.style.display = 'inline-block'
+            pauseBtn.style.visibility = 'hidden'
+            plantingMsg.style.display = 'none'
           }
         }
       } 
@@ -125,13 +128,23 @@ function pauseTimer(){
 
 function restartTimer(){
   timeEl.textContent = `${displayTime}:00`
-  pomodoroTime = displayTime - 25
+  pomodoroTime = displayTime - 1
   seconds = 60
 
   pauseTimer()
 
+  if(totalWorkTomato === 0){
+    totalWorkTomato += 1
+  }
+
+  plusBtn.style.visibility = 'visible'
+  minusBtn.style.visibility = 'visible'
   plusBtn.style.display = 'inline-block'
   minusBtn.style.display = 'inline-block'
+  claimBtn.style.display = 'none'
+
+  plantingMsg.textContent = `Press play to start planting`
+  plantingMsg.style.display = 'inline-block'
 }
 
 /*
@@ -141,12 +154,14 @@ function restartTimer(){
 */
 let tomatoStorageList = document.getElementById('tomato-storage-list')
 let totalStorageTomatoesMsg = document.getElementById('total-storage-tomatoes')
+let totalStorageTomatoes = 0
 
 let tomatoArray = []
 
 function claimTomatoFun(){
   for(let i = totalWorkTomato; i > 0; i--){
     let tomatoLi = document.createElement('li')
+    tomatoLi.setAttribute('id', 'tomato-li')
     tomatoLi.textContent += '🍅'
     tomatoStorageList.append(tomatoLi)
 
@@ -154,12 +169,14 @@ function claimTomatoFun(){
     totalWorkTomato -= 1
   }
   if(totalWorkTomato === 0){
-    claimBtn.style.visibility = 'hidden'
+    claimBtn.style.background = 'var(--color-pre-claim-bg)'
+    claimBtn.style.boxShadow = '0 5px var(--color-pre-claim-shadow)'
+    claimBtn.disabled = false
   }
-}
+  updateTotalTomatoesMsg()
 
-totalStorageTomatoes = tomatoArray.length
-totalStorageTomatoesMsg.textContent = `You have ${totalStorageTomatoes} 🍅`
+  possibleKetchupsUpdate()
+}
 
 /*
   ========================================
@@ -167,7 +184,6 @@ totalStorageTomatoesMsg.textContent = `You have ${totalStorageTomatoes} 🍅`
   ========================================
 */
 let possibleKetchupsMsg = document.getElementById('possible-ketchups')
-let possibleKetchups = Math.trunc(totalStorageTomatoes / 2)
 
 let sweetInput = document.getElementById('sweet-input')
 let spicyInput = document.getElementById('spicy-input')
@@ -177,92 +193,139 @@ let sweetCount = 0
 let spicyCount = 0
 let sweetSpicyCount = 0
 
-let max = possibleKetchups + 1
+let max = totalStorageTomatoes + 1
 
 // SWEET
 
 function plusSweetKetchup(){
-  if(possibleKetchups > 0 && sweetCount < max){
+  if(totalStorageTomatoes > 1 && sweetCount < max){
     sweetCount += 1
-    if(possibleKetchups > 0){
-      possibleKetchups -= 1
+    if(totalStorageTomatoes > 1){
+      totalTomatoUpdate()
+      possibleKetchupsUpdate()
+      plusDecreaseTomatoLi()
     }
     sweetInput.textContent = sweetCount
+    possibleKetchupsUpdate()
   }
 }
 function minusSweetKetchup(){
   if(sweetCount > 0){
     sweetCount -= 1
-    possibleKetchups += 1
-    
+    addTomatoUpdate()
+
     sweetInput.textContent = sweetCount
+    possibleKetchupsUpdate()
+    minusIncreaseTomatoLi()
   }
 }
 
 // SPICY
 
 function plusSpicyKetchup(){
-  if(possibleKetchups > 0 && spicyCount < max){
+  if(totalStorageTomatoes > 1 && spicyCount < max){
     spicyCount += 1
-    if(possibleKetchups > 0){
-      possibleKetchups -= 1
+    if(totalStorageTomatoes > 1){
+      totalTomatoUpdate()
+      possibleKetchupsUpdate()
+      plusDecreaseTomatoLi()
     }
     spicyInput.textContent = spicyCount
+    possibleKetchupsUpdate()
   }
 }
 function minusSpicyKetchup(){
   if(spicyCount > 0){
     spicyCount -= 1
-    possibleKetchups += 1
+    addTomatoUpdate()
     
     spicyInput.textContent = spicyCount
+    possibleKetchupsUpdate()
+    minusIncreaseTomatoLi()
   }
 }
 
 // SWEET & SPICY
 
 function plusSweetSpicyKetchup(){
-  if(possibleKetchups > 0 && sweetSpicyCount < max){
+  if(totalStorageTomatoes > 1 && sweetSpicyCount < max){
     sweetSpicyCount += 1
-    if(possibleKetchups > 0){
-      possibleKetchups -= 1
+    if(totalStorageTomatoes > 1){
+      totalTomatoUpdate()
+      possibleKetchupsUpdate()
+      plusDecreaseTomatoLi()
     }
     sweetSpicyInput.textContent = sweetSpicyCount
+    possibleKetchupsUpdate()
   }
 }
 function minusSweetSpicyKetchup(){
   if(sweetSpicyCount > 0){
     sweetSpicyCount -= 1
-    possibleKetchups += 1
+    addTomatoUpdate()
 
     sweetSpicyInput.textContent = sweetSpicyCount
+    possibleKetchupsUpdate()
+    minusIncreaseTomatoLi()
   }
 }
+
+// ketchup icon
 
 let ketchupIcon = document.createElement('i')
 ketchupIcon.classList.add('fas')
 ketchupIcon.classList.add('fa-wine-bottle')
 ketchupIcon.style.color = 'var(--color-white)'
 
+// ♻️ functions 
+
+function updateTotalTomatoesMsg(){
+  totalStorageTomatoes = tomatoArray.length
+  totalStorageTomatoesMsg.textContent = `You have ${totalStorageTomatoes} 🍅`
+}
+
 function possibleKetchupsUpdate(){
-  possibleKetchupsMsg.textContent = `You can fill up ${possibleKetchups} `
+  let totalPossibleKetchups = Math.trunc(totalStorageTomatoes / 2)
+
+  possibleKetchupsMsg.textContent = `You can fill up ${totalPossibleKetchups} `
   possibleKetchupsMsg.appendChild(ketchupIcon)
 }
 
-possibleKetchupsUpdate()
+function totalTomatoUpdate(){
+  for(let i = 2; i > 0; i--){
+    tomatoArray.pop()
+
+    updateTotalTomatoesMsg()
+  }
+}
+function addTomatoUpdate(){
+  for(let i = 2; i > 0; i--){
+    tomatoArray.push('🍅')
+
+    updateTotalTomatoesMsg()
+  }
+}
+
+function plusDecreaseTomatoLi(){
+  for(let i = 2; i > 0; i--){
+    let getTomatoLi = document.getElementById('tomato-li')
+    getTomatoLi.remove()
+  }
+}
+function minusIncreaseTomatoLi(){
+  for(let i = 2; i > 0; i--){
+    let tomatoLi = document.createElement('li')
+    tomatoLi.setAttribute('id', 'tomato-li')
+    tomatoLi.textContent += '🍅'
+    tomatoStorageList.append(tomatoLi)
+  }
+}
 
 /*
   ========================================
   KETCHUP STORAGE
   ========================================
 */
-function totalTomatoUpdate(){
-  tomatoArray.pop()
-  tomatoArray.pop()
-  totalStorageTomatoes = tomatoArray.length
-  totalStorageTomatoesMsg.textContent = `You have ${totalStorageTomatoes} 🍅`
-}
-
 // SWEET
 
 let sweetStorageList = document.getElementById('sweet-storage-list')
@@ -270,8 +333,13 @@ let sweetArray = []
 
 function addSweetKetchup(){
   for(let i = sweetCount; i > 0; i--){
+    let sweetKetchupIcon = document.createElement('i')
+    sweetKetchupIcon.classList.add('fas')
+    sweetKetchupIcon.classList.add('fa-wine-bottle')
+    sweetKetchupIcon.style.color = 'var(--color-sweet-ketchup)'
+
     let sweetLi = document.createElement('li')
-    sweetLi.textContent += '💛'
+    sweetLi.append(sweetKetchupIcon)
     sweetStorageList.append(sweetLi)
 
     sweetArray.push('💛')
@@ -280,11 +348,16 @@ function addSweetKetchup(){
     sweetInput.textContent = sweetCount
 
     possibleKetchupsUpdate()
-    totalTomatoUpdate()
 
     let totalSweetKetchup = sweetArray.length
     let totalSweetMsg = document.getElementById('total-sweet')
-    totalSweetMsg.textContent = `${totalSweetKetchup} 💛`
+    totalSweetMsg.textContent = `${totalSweetKetchup} `
+
+    let sweetKetchupIcon2 = document.createElement('i')
+    sweetKetchupIcon2.classList.add('fas')
+    sweetKetchupIcon2.classList.add('fa-wine-bottle')
+    sweetKetchupIcon2.style.color = 'var(--color-sweet-ketchup)'
+    totalSweetMsg.append(sweetKetchupIcon2)
   }
 }
 
@@ -295,8 +368,13 @@ let spicyArray = []
 
 function addSpicyKetchup(){
   for(let i = spicyCount; i > 0; i--){
+    let spicyKetchupIcon = document.createElement('i')
+    spicyKetchupIcon.classList.add('fas')
+    spicyKetchupIcon.classList.add('fa-wine-bottle')
+    spicyKetchupIcon.style.color = 'var(--color-spicy-ketchup)'
+
     let spicyLi = document.createElement('li')
-    spicyLi.textContent += '❤️'
+    spicyLi.append(spicyKetchupIcon)
     spicyStorageList.append(spicyLi)
 
     spicyArray.push('❤️')
@@ -305,11 +383,16 @@ function addSpicyKetchup(){
     spicyInput.textContent = spicyCount
 
     possibleKetchupsUpdate()
-    totalTomatoUpdate()
 
     let totalSpicyKetchup = spicyArray.length
     let totalSpicyMsg = document.getElementById('total-spicy')
-    totalSpicyMsg.textContent = `${totalSpicyKetchup} ❤️`
+    totalSpicyMsg.textContent = `${totalSpicyKetchup} `
+
+    let spicyKetchupIcon2 = document.createElement('i')
+    spicyKetchupIcon2.classList.add('fas')
+    spicyKetchupIcon2.classList.add('fa-wine-bottle')
+    spicyKetchupIcon2.style.color = 'var(--color-spicy-ketchup)'
+    totalSpicyMsg.append(spicyKetchupIcon2)
   }
 }
 
@@ -320,8 +403,13 @@ let sweetSpicyArray = []
 
 function addSweetSpicyKetchup(){
   for(let i = sweetSpicyCount; i > 0; i--){
+    let sweetSpicyKetchupIcon = document.createElement('i')
+    sweetSpicyKetchupIcon.classList.add('fas')
+    sweetSpicyKetchupIcon.classList.add('fa-wine-bottle')
+    sweetSpicyKetchupIcon.style.color = 'var(--color-sweet-spicy-ketchup)'
+    
     let sweetSpicyLi = document.createElement('li')
-    sweetSpicyLi.textContent += '🧡'
+    sweetSpicyLi.append(sweetSpicyKetchupIcon)
     sweetSpicyStorageList.append(sweetSpicyLi)
 
     sweetSpicyArray.push('🧡')
@@ -330,11 +418,16 @@ function addSweetSpicyKetchup(){
     sweetSpicyInput.textContent = sweetSpicyCount
 
     possibleKetchupsUpdate()
-    totalTomatoUpdate()
 
     let totalSweetSpicyKetchup = sweetSpicyArray.length
     let totalSweetSpicyMsg = document.getElementById('total-sweet-spicy')
-    totalSweetSpicyMsg.textContent = `${totalSweetSpicyKetchup} 🧡`
+    totalSweetSpicyMsg.textContent = `${totalSweetSpicyKetchup} `
+
+    let sweetSpicyKetchupIcon2 = document.createElement('i')
+    sweetSpicyKetchupIcon2.classList.add('fas')
+    sweetSpicyKetchupIcon2.classList.add('fa-wine-bottle')
+    sweetSpicyKetchupIcon2.style.color = 'var(--color-sweet-spicy-ketchup)'
+    totalSweetSpicyMsg.append(sweetSpicyKetchupIcon2)
   }
 }
 
