@@ -18,19 +18,18 @@
 </head>
 <body>
     <div class="body-container">
-        <header>
-            <h1>Pomodoro Ketchup</h1>
-            <p>When life gives you tomato seeds, make some pomodoro ketchup 😂</p>
-        </header>
+        <!-- <header>
+            
+        </header> -->
     <!-- SET TIME -->
-        <section class="timer-sec">
+        <section class="timer-sec" id="timer-sec">
+            <h1 class="project-title">Pomodoro Ketchup</h1>
+            <p class="project-intro">When life gives you tomato seeds, make some pomodoro ketchup 😂</p>
             <div class="plusminus">
                 <button id="minus-btn" onclick="minus()">
                     <i class="fas fa-angle-down"></i>
                 </button>
-
                 <p class="time" id="time">25:00</p>
-                
                 <button id="plus-btn" onclick="plus()">
                     <i class="fas fa-angle-up"></i>
                 </button>
@@ -53,7 +52,7 @@
             </section>
         </section>
     <!-- TOMATO STORAGE -->
-        <section id="tomato-sec">
+        <section class="tomato-sec" id="tomato-sec">
             <h2>Tomato Storage</h2>
             <div id="tomato-storage">
                 <ul id="tomato-storage-list"></ul>
@@ -61,7 +60,7 @@
             <p id="total-storage-tomatoes">You have 0 🍅</p>
         </section>
     <!-- KETCHUP FACTORY -->
-        <section class="ketchup-factory">
+        <section class="ketchup-factory" id="ketchup-factory">
             <h2>Ketchup Factory</h2>
             <p id="possible-ketchups">You can fill up 0 <i class="fas fa-wine-bottle"></i></p>
             <div class="ketchup-factory-container">
@@ -104,34 +103,34 @@
             </div>
         </section>
     <!-- KETCHUP STORAGE -->
-        <section class="ketchup-storage-sec">
+        <section class="ketchup-storage-sec" id="ketchup-storage-sec">
             <h2>Ketchup Storage</h2>
             <div class="ketchup-storage">
                 <section class="sweet-sec">
-                    <h3>Sweet</h3>
                     <div id="sweet-storage">
                         <ul id="sweet-storage-list"></ul>
                     </div>
+                    <h3>Sweet</h3>
                     <p id="total-sweet">0 <i class="fas fa-wine-bottle"></i></p>
                 </section>
                 <section class="spicy-sec">
-                    <h3>Spicy</h3>
                     <div id="spicy-storage">
                         <ul id="spicy-storage-list"></ul>
                     </div>
+                    <h3>Spicy</h3>
                     <p id="total-spicy">0 <i class="fas fa-wine-bottle"></i></p>
                 </section>
                 <section class="sweet-spicy-sec">
-                    <h3>Sweet & Spicy</h3>
                     <div id="sweet-spicy-storage">
                         <ul id="sweet-spicy-storage-list"></ul>
                     </div>
+                    <h3>Sweet & Spicy</h3>
                     <p id="total-sweet-spicy">0 <i class="fas fa-wine-bottle"></i></p>
                 </section>
             </div>
         </section>
     <!-- FOOTER -->
-        <footer class="footer">
+        <footer class="footer" id="footer">
             <div class="socials">
                 <ul class="socials-list">
                     <li>

@@ -52,11 +52,8 @@ function plus(){
 }
 
 let seconds = 60
-let addZero = 0
-
 let countdownSec
 let countdownMin
-
 pomodoroTime -= 1
 
 pauseBtn.style.display = 'none'
@@ -80,10 +77,10 @@ function playTimer() {
         timeEl.textContent = `${pomodoroTime}:${seconds}`
 
         if(seconds < 10){
-          timeEl.textContent = `${pomodoroTime}:${addZero}${seconds}`
+          timeEl.textContent = `${pomodoroTime}:0${seconds}`
         }
         if(seconds === 0){
-          timeEl.textContent = `${pomodoroTime}:${addZero}${seconds}`
+          timeEl.textContent = `${pomodoroTime}:0${seconds}`
           seconds += 60
           if(pomodoroTime === 0){
             clearInterval(countdownSec)
@@ -95,16 +92,19 @@ function playTimer() {
         timeEl.textContent = `0${pomodoroTime}:${seconds}`
 
         if(seconds < 10){
-          timeEl.textContent = `0${pomodoroTime}:${addZero}${seconds}`
+          timeEl.textContent = `0${pomodoroTime}:0${seconds}`
         }
         if(seconds === 0){
-          timeEl.textContent = `0${pomodoroTime}:${addZero}${seconds}`
+          timeEl.textContent = `0${pomodoroTime}:0${seconds}`
           seconds += 60
           if(pomodoroTime === 0){
             clearInterval(countdownSec)
             claimBtn.style.display = 'inline-block'
+            claimBtn.textContent = `Claim ${totalWorkTomato} 🍅`
+
             pauseBtn.style.visibility = 'hidden'
             plantingMsg.style.display = 'none'
+            harvestMsg.style.display = 'none'
           }
         }
       } 
@@ -145,6 +145,7 @@ function restartTimer(){
 
   plantingMsg.textContent = `Press play to start planting`
   plantingMsg.style.display = 'inline-block'
+  harvestMsg.style.display = 'inline-block'
 }
 
 /*
@@ -174,7 +175,6 @@ function claimTomatoFun(){
     claimBtn.disabled = false
   }
   updateTotalTomatoesMsg()
-
   possibleKetchupsUpdate()
 }
 
@@ -193,12 +193,12 @@ let sweetCount = 0
 let spicyCount = 0
 let sweetSpicyCount = 0
 
-let max = totalStorageTomatoes + 1
-
 // SWEET
 
 function plusSweetKetchup(){
-  if(totalStorageTomatoes > 1 && sweetCount < max){
+  let countPossibleKetchups = Math.trunc(totalStorageTomatoes / 2)
+
+  if(totalStorageTomatoes > 1 && 0 < countPossibleKetchups){
     sweetCount += 1
     if(totalStorageTomatoes > 1){
       totalTomatoUpdate()
@@ -223,7 +223,9 @@ function minusSweetKetchup(){
 // SPICY
 
 function plusSpicyKetchup(){
-  if(totalStorageTomatoes > 1 && spicyCount < max){
+  let countPossibleKetchups = Math.trunc(totalStorageTomatoes / 2)
+
+  if(totalStorageTomatoes > 1 && 0 < countPossibleKetchups){
     spicyCount += 1
     if(totalStorageTomatoes > 1){
       totalTomatoUpdate()
@@ -248,7 +250,9 @@ function minusSpicyKetchup(){
 // SWEET & SPICY
 
 function plusSweetSpicyKetchup(){
-  if(totalStorageTomatoes > 1 && sweetSpicyCount < max){
+  let countPossibleKetchups = Math.trunc(totalStorageTomatoes / 2)
+  
+  if(totalStorageTomatoes > 1 && 0 < countPossibleKetchups){
     sweetSpicyCount += 1
     if(totalStorageTomatoes > 1){
       totalTomatoUpdate()

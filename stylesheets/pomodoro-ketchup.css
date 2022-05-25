@@ -59,6 +59,7 @@ html {
     align-content: center;   
 }
 
+
 /*
   ========================================
   TYPOGRAPHY
@@ -98,19 +99,63 @@ a {
     text-decoration: none;
     color: var(--color-white);
 }
+.plusminus .time {
+    font-family: monospace;
+}
 
 /*
   ========================================
   SECTIONS SIZING
   ========================================
 */
-header,
 .timer-sec,
 #tomato-sec,
 .ketchup-factory,
 .ketchup-storage-sec {
     width: 260px;
 }
+@media (min-width: 600px){
+    body {
+        max-width: 620px;
+    }
+    .body-container {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 50% 50%;
+
+        gap: 15px;
+
+        justify-content: normal;
+    }
+    .timer-sec,
+    .ketchup-factory {
+        grid-row: 1/ span 1;
+    }
+    .tomato-sec,
+    .ketchup-storage-sec {
+        grid-row: 2/ span 1;
+    }
+    .footer {
+        grid-row: 3/ span 1;
+        grid-column: 1/span 2;
+    }
+    #timer-sec,
+    #ketchup-factory {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    #tomato-sec,
+    #ketchup-storage-sec {
+        margin-bottom: 30px;
+    }
+    #footer {
+        margin-top: 0;
+    }
+    .ketchup-factory h2 {
+        margin-top:  20px;
+    }
+}
+
 
 /*
   ========================================
@@ -162,32 +207,29 @@ button,
 
 /*
   ========================================
-  HEADER SECTION
-  ========================================
-*/
-header {
-    margin-top: 20px;
-    margin-bottom: 30px;
-}
-header h1 {
-    margin-bottom: 10px;
-}
-
-/*
-  ========================================
   TIMER SECTION
   ========================================
 */
+.project-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 5px solid var(--color-btn-bg);
+}
+.project-intro {
+    margin-bottom: 20px;
+}
 .timer-sec {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-content: center;
+    align-content: flex-start;
 }
 .timer-sec #minus-btn,
 .timer-sec #plus-btn {
+    width: 40px;
     font-size: 2rem;
     background-color: var(--color-white);
     border: 1px solid var(--color-black);
@@ -207,8 +249,7 @@ header h1 {
 .timer-sec #play-btn,
 .timer-sec #pause-btn,
 .timer-sec #restart-btn {
-    width: 30px;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--color-white);
     display: flex;
     flex-flow: row wrap;
@@ -225,13 +266,14 @@ header h1 {
 }
 .plusminus .time {
     margin: 0 20px 0 20px;
+    width: 120px;
 
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
 
-    font-size: 1.75rem;
+    font-size: 2.25rem;
     font-weight: 600;
 }
 .harvest-container {
@@ -246,7 +288,7 @@ header h1 {
   TOMATO STORAGE
   ========================================
 */
-#tomato-sec {
+.tomato-sec {
     margin-bottom: 30px;
 }
 #tomato-storage {
@@ -256,7 +298,7 @@ header h1 {
     margin: 10px auto;
     padding: 8px;
 }
-#tomato-sec h2 {
+.tomato-sec h2 {
     text-align: left;
     margin: 0px auto;
 }
@@ -388,22 +430,13 @@ background: #555;
 #sweet-spicy-storage {
     height: 82px;
     padding: 8px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 
     background: var(--color-black);
     border-radius: 10px;
 }
-/* #sweet-storage {
-    background: var(--color-light-pink-1);
-}
-#spicy-storage {
-    background: var(--color-light-pink-2);
-}
-#sweet-spicy-storage {
-    background: var(--color-light-pink-3);
-} */
 .ketchup-storage h3 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-size: 0.71rem;
 }
 #sweet-storage-list,
@@ -411,7 +444,7 @@ background: #555;
 #sweet-spicy-storage-list {
     margin: 0;
     padding: 0;
-    height: 65px;
+    height: 57px;
 
     overflow-y: auto;
 }
