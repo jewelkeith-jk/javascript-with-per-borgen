@@ -133,7 +133,8 @@ a {
 .calculator-sec,
 .metric-conversion-sec,
 .blackjack-sec,
-.pomodoro-ketchup-sec {
+.pomodoro-ketchup-sec,
+.password-generator-sec {
     flex-basis: 100%;
     display: flex;
     flex-flow: row wrap;
@@ -145,7 +146,8 @@ a {
 .calculator-sec a,
 .metric-conversion-sec a,
 .blackjack-sec a,
-.pomodoro-ketchup-sec a {
+.pomodoro-ketchup-sec a,
+.password-generator-sec a {
     flex-basis: 100%;
     padding: 20px;
     background-color: var(--color-black);

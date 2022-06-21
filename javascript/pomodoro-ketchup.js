@@ -54,7 +54,7 @@ function plus(){
 let seconds = 60
 let countdownSec
 let countdownMin
-pomodoroTime -= 1
+pomodoroTime -= 25
 
 pauseBtn.style.display = 'none'
 claimBtn.style.display = 'none'
