@@ -107,13 +107,13 @@ function symbolNumberCheckFun(){
 }
 let symbolOn = false
 function symbolCheckFun(){
-    if(symbolCheck.checked === true){
+    if(symbolCheck.checked === true && numberCheck.checked === false){
         symbolOn = true
     }   
 }
 let numberOn = false
 function numberCheckFun(){
-    if(numberCheck.checked === true){
+    if(numberCheck.checked === true && symbolCheck.checked === false){
         numberOn = true
     }
 }
@@ -122,21 +122,21 @@ function getRandomNumber(){
     symbolNumberCheckFun()
     symbolCheckFun()
     numberCheckFun()
-    if(symbolOn === true && newCheckbox.checked === false){
+    if(symbolOn === true && numberOn === false){
         randomNum = Math.floor(Math.random() * (withSymbols.length -1))
-        // console.log(randomNum)
+        console.log(randomNum)
     }
-    if(numberOn === true && newCheckbox.checked === false){
+    if(numberOn === true && symbolOn === false){
         randomNum = Math.floor(Math.random() * (withNumbers.length -1))
-        // console.log(randomNum)
+        console.log(randomNum)
     }
     if(newCheckbox.checked === true){
         randomNum = Math.floor(Math.random() * (characters.length -1))
-        // console.log(randomNum)
+        console.log(randomNum)
     }
     if(symbolCheck.checked === false && numberCheck.checked === false){
         randomNum = Math.floor(Math.random() * (lettersOnly.length -1))
-        // console.log(randomNum)
+        console.log(randomNum)
     }
 }
 
@@ -144,11 +144,11 @@ function pushToArray(newArray){
     symbolNumberCheckFun()
     symbolCheckFun()
     numberCheckFun()
-    if(symbolOn === true && newCheckbox.checked === false){
+    if(symbolOn === true && numberOn === false){
         newArray.push(withSymbols[randomNum])
-        // console.log(firstArr)
+        console.log(firstArr)
     }
-    if(numberOn === true && newCheckbox.checked === false){
+    if(numberOn === true && symbolOn === false){
         newArray.push(withNumbers[randomNum])
         // console.log(firstArr)
     }
@@ -177,6 +177,8 @@ function getRandomCharacters(){
     if(restart === true){
         slicePassArray(firstArr)
         slicePassArray(secondArr)
+        slicePassArray(thirdArr)
+        slicePassArray(fourthArr)
 
         firstClipboard.className = "fas fa-clipboard"
         secondClipboard.className = "fas fa-clipboard"
@@ -191,7 +193,6 @@ function getRandomCharacters(){
             popChar(firstArr)
             passOnInput(firstInput, firstArr)
         }
-        restart = true
     }
     while(secondArr.length !== count){
         getRandomNumber()
@@ -201,7 +202,6 @@ function getRandomCharacters(){
             popChar(secondArr)
             passOnInput(secondInput, secondArr)
         }
-        restart = true
     }
     while(thirdArr.length !== count){
         getRandomNumber()
@@ -211,7 +211,6 @@ function getRandomCharacters(){
             popChar(thirdArr)
             passOnInput(thirdInput, thirdArr)
         }
-        restart = true
     }
     while(fourthArr.length !== count){
         getRandomNumber()
@@ -221,12 +220,12 @@ function getRandomCharacters(){
             popChar(fourthArr)
             passOnInput(fourthInput, fourthArr)
         }
-        restart = true
     }
-    if(firstArr.length === count && secondArr.length === count && thirdArr.length !== count && fourthArr.length !== count){
+    if(firstArr.length === count && secondArr.length === count && thirdArr.length === count && fourthArr.length === count){
         symbolOn = false
         numberOn = false
         newCheckbox.checked = false
+        restart = true
     }
 }
 
